@@ -18,4 +18,14 @@ app.listen(4000, ()=>{
     console.log('Server is running on port 4000');
 })
 app.use("/api/user", userRouter);
-app.use("/api/auth",authRouter)
+app.use("/api/auth",authRouter);
+
+app.use((err,req,res,next)=>{
+const statuscode = err.statuscode || 500;
+const message = err.message || "Internal Server Error";
+return res.status(statuscode).json({
+    success:false,
+    statuscode,
+    message
+})
+})
