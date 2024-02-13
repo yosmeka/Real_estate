@@ -7,11 +7,13 @@ import Profile from "./pages/Profile"
 import About from "./pages/About"
 
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Header from "./component/Header"
 
 
 export default function App() {
   return (
 <BrowserRouter>
+<Header />
 <Routes>
    <Route path='/' element={<Home />}/>
    <Route path='/Sign-in' element={<SignIn />}/>
