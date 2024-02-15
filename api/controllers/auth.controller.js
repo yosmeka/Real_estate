@@ -8,7 +8,7 @@ const newUser = new User({username,email,password:hashpassword});
 try{
 
     await newUser.save()
-    res.status(201).json("user created sucfull")
+    res.status(201).json("user created succsessfully")
 }catch(error){
 next(error);
 }
